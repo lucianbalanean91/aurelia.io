@@ -11,6 +11,8 @@
     "aurelia-animator-css": "^1.0.4",
     "aurelia-bootstrap": "^0.1.20",
     "aurelia-bootstrapper": "^2.3.2",
+    "bootstrap": "^4.3.1",
+    "font-awesome": "^4.7.0",
     "tether": "^1.4.7",
     "velocity-animate": "^1.5.2"
   },
