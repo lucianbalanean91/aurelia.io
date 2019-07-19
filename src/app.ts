@@ -6,7 +6,6 @@ export class App {
 
 
   configureRouter(config: RouterConfiguration, router: Router): void {
-    debugger;
     config.title = 'taxiApp';
     config.map([
       {
