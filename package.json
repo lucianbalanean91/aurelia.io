@@ -8,11 +8,21 @@
   },
   "license": "MIT",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.10.1",
     "aurelia-animator-css": "^1.0.4",
     "aurelia-bootstrap": "^0.1.20",
     "aurelia-bootstrapper": "^2.3.2",
+    "aurelia-google-maps": "^2.3.0",
+    "aurelia-plugins-dropdown": "^2.7.1",
+    "aurelia-plugins-google-maps": "^2.6.0",
+    "aurelia-validation": "^1.4.0",
     "bootstrap": "^4.3.1",
     "font-awesome": "^4.7.0",
+    "google-maps-api": "^2.0.1",
+    "jquery": "^3.4.1",
+    "leaflet": "^1.5.1",
+    "normalize.css": "^8.0.1",
+    "popper.js": "^1.15.0",
     "tether": "^1.4.7",
     "velocity-animate": "^1.5.2"
   },
@@ -57,6 +67,11 @@
     "aurelia-pal-nodejs": "^1.2.0",
     "ts-jest": "^24.0.0",
     "@types/jest": "^24.0.9"
+  },
+  "paths": {
+    "*": "app/dist/*.js",
+    "github:*": "app/jspm_packages/github/*.js",
+    "npm:*": "app/jspm_packages/npm/*.js"
   },
   "scripts": {
     "build": "au build",

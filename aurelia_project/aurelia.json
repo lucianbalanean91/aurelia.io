@@ -9,9 +9,52 @@
     "valueConverters": "resources/value-converters",
     "bindingBehaviors": "resources/binding-behaviors"
   },
+  "bundles": [
+  ],
+  "copyFiles": {
+    "node_modules/font-awesome/fonts/*": "font-awesome/fonts"
+  },
   "dependencies":[
     "velocity-animate",
     "tether",
+    "jquery",
+    {
+      "name": "popper.js",
+      "path": "../node_modules/popper.js/dist/umd",
+      "main": "popper.min"
+    },
+    {
+      "name": "aurelia-plugins-dropdown",
+      "path": "../node_modules/aurelia-plugins-dropdown/dist/amd",
+      "main": "aurelia-plugins-dropdown"
+    },
+    {
+      "name": "aurelia-validation",
+      "path": "../node_modules/aurelia-validation/dist/amd",
+      "main": "aurelia-validation"
+    },
+    {
+      "name": "aurelia-google-maps",
+      "path": "../node_modules/aurelia-google-maps/dist/amd",
+      "main": "index"
+    },
+    {
+      "name": "aurelia-plugins-google-maps",
+      "path": "../node_modules/aurelia-plugins-google-maps/dist/amd",
+      "main": "aurelia-plugins-google-maps"
+    },
+    {
+      "name": "vendor-bundle.js",
+      "prepend": [  ],
+      "dependencies": [
+        {
+          "name": "bootstrap",
+          "deps": ["jquery"],
+          "path": "../node_modules/bootstrap",
+          "main": "dist/js/bootstrap.min"
+        }
+      ]
+    },
     {
       "name": "aurelia-bootstrap",
       "path": "../node_modules/aurelia-bootstrap/dist/amd",

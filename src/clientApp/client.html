@@ -1,3 +1,177 @@
 <template>
-  <h1>Client</h1>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <a class="navbar-brand" click.delegate="home()" href="#">
+      <img src="../../image/taxi.png" alt="">
+    </a>
+    <h1>Client App</h1>
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+              aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item ">
+            <a class="nav-link" click.delegate="home()" href="#">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#/abouts">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#/clients">Client</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#/contacts">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-8">
+            <div id="map_id" style="height: 600px"></div>
+            <!--            <google-map-->
+            <!--              map-click.delegate="clickMap($event)"-->
+            <!--              latitude="37.780986253433895"-->
+            <!--              longitude="-122.45291600632277"> </google-map>-->
+          </div>
+          <div class="col-md-4">
+            <a title="Order Taxi" id="order-title">
+              <h3>Formular Comanda</h3>
+            </a>
+            <br><br>
+            <form submit.delegate="submit()" validation-errors.bind="errors">
+              <!--    <ul><li repeat.for="error of controller.errors">${error.message}</li></ul>-->
+
+
+              <div class="form-group">
+                <input type="text" class="form-control" id="name" placeholder="Nume"
+                       value.bind="name & validate" required>
+              </div>
+
+              <div class="form-group">
+                <input type="text" class="form-control" id="lastName" placeholder="Prenume"
+                       value.bind="lastName & validate" required>
+              </div>
+
+              <div class="form-group">
+                <input type="email" class="form-control" id="email" placeholder="Email"
+                       value.bind="Email & validate" required>
+              </div>
+
+              <div class="form-group">
+                <input type="text" class="form-control" id="number" placeholder="Numar Telefon"
+                       value.bind="phoneNumber & validate" required>
+              </div>
+
+              <div class="form-group">
+                <input type="text" class="form-control" id="txtStrada" name="txtStrada" placeholder="Strada"
+                       value.bind="Street & validate" required autocomplete="off" >
+                <input type="hidden" id="lat" name="latitude" value.bind="lat" autocomplete="off">
+                <input type="hidden" id="lng" name="longitude" value.bind="lng" autocomplete="off">
+              </div>
+
+              <div class="input-group">
+                <input type="text" class="form-control" id="txtNr" name="txtNr" placeholder="Nr.Strada"
+                       value.bind="NrStreet & validate" required >
+                <input type="text" class="form-control" id="block" placeholder="Bloc"
+                       value.bind="Block & validate" required>
+                <input type="text" class="form-control" id="scale" placeholder="Scara"
+                       value.bind="Scale & validate" required>
+              </div>
+
+
+              <hr>
+
+              <button type="submit" class="btn">Trimite Comanda</button>
+            </form>
+
+            <ul if.bind="controller.errors">
+              <li repeat.for="error of controller.errors">
+                ${error.message}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    h2 {
+      text-align: center;
+      padding-top: 25px;
+    }
+
+    body {
+      background: beige;
+    }
+
+    nav h1 {
+      color: white;
+    }
+
+    form {
+      /*padding-left: 450px;*/
+      /*padding-right: 450px;*/
+      padding-top: 15px;
+      margin-right: 10px;
+    }
+
+    div {
+      padding-top: 5px;
+    }
+
+
+    #order-title {
+      padding-top: 10px;
+      text-align: center;
+      height: 50px;
+      font-family: "Arial Black", serif;
+      width: 29.5em;
+      float: left;
+      border-radius: 5px;
+      background: gold;
+      color: black;
+      transition: background 1s, color 1s;
+      -webkit-transition: background 1s, color 1s;
+    }
+
+    #order-title:hover {
+      background: black;
+      color: white;
+    }
+
+    div label {
+      margin-right: 25px;
+    }
+
+    .btn {
+      background: gold;
+      color: black;
+      text-align: center;
+      font-family: "Arial Black", serif;
+      transition: background 1s, color 1s;
+      -webkit-transition: background 1s, color 1s;
+    }
+
+    .btn:hover {
+      background: black;
+      color: white;
+    }
+
+    /*google-map {*/
+    /*  height: 625px;*/
+    /*}*/
+
+  </style>
+
 </template>
+
+

@@ -5,6 +5,7 @@ export class App {
   router: Router;
 
 
+
   configureRouter(config: RouterConfiguration, router: Router): void {
     config.title = 'taxiApp';
     config.map([
@@ -28,6 +29,13 @@ export class App {
         moduleId : PLATFORM.moduleName('./clientApp/client'),
         nav: true,
         title: 'Client'
+      },
+      {
+        route:'contacts',
+        name:'contact',
+        moduleId : PLATFORM.moduleName('./contactApp/contact'),
+        nav: true,
+        title: 'Contact'
       }
     ]);
     this.router = router;

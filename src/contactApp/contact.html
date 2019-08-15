@@ -1,0 +1,245 @@
+<template>
+  <!--  <h2>Contact</h2>-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <a class="navbar-brand" click.delegate="home()" href="#">
+      <img src="../../image/taxi.png" alt="">
+    </a>
+    <h1>Contact</h1>
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+              aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item ">
+            <a class="nav-link" click.delegate="home()" href="#">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#/abouts">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#/clients">Client</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#/contacts">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-8" style="background: beige">
+            <h2>Contact</h2>
+            <br><br>
+            <p>
+              La <strong>TAXI APP</strong> ai o intreaga serie de optiuni pentru a plasa o comanda de taxi, astfel incat
+              in orice moment actiunea sa fie usoara si rapida. Stim ca esti mereu in miscare, asa ca poti plasa o
+              comanda online folosind aplicatia <a
+              href="https://play.google.com/store/apps/details?id=ro.ette.taxipro.client&hl=ro"><strong>TAXI
+              APP</strong></a> de pe play store sau iOS si sa contactezi una dintre cele mai apropiate masini fata de
+              tine. Poti comanda un taxi si telefonic, apeland numerele de mai jos.
+            </p>
+            <p>
+              Iata mai jos datele pentru oricare metoda de comanda de taxi aleasa:
+            </p>
+            <table border="1" cellpadding="1" cellspacing="1" style="width: 50%">
+              <tr>
+                <td>
+                  <strong>Pentru comenzi taxi:</strong>
+                  <br>
+                  Romtelecom:
+                  <br>
+                  Vodafone:
+                  <br>
+                  Orange:
+                  <br>
+                </td>
+                <td>
+                  <br>
+                  <strong style="margin-left: 5px">0260 611 111 ,0260 622 222, 0260 662 888<br></strong>
+                  <strong style="margin-left: 5px">0723732425</strong>
+                  <br>
+                  <strong style="margin-left: 5px">0745882155</strong>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div class="col-md-4" style="background: beige">
+
+            <a title="contact" id="contactUs">
+              <h3>Contact Us</h3>
+            </a>
+            <br>
+            <!-- Default form contact -->
+            <form class=" border border-light p-5" submit.delegate="submit()" validation-errors.bind="errors">
+
+              <!--              <a title="contact" id="contactUs">-->
+              <!--                <h3>Contact Us</h3>-->
+              <!--              </a>-->
+
+              <div class="form-group">
+                <input type="text" class="form-control" id="name" placeholder="Nume"
+                       value.bind="name & validate" required>
+              </div>
+
+              <div class="form-group">
+                <input type="email" class="form-control" id="email" placeholder="Email"
+                       value.bind="email & validate" required>
+              </div>
+
+              <div class="form-group">
+                <input type="text" class="form-control" id="number" placeholder="Numar Telefon"
+                       value.bind="number & validate" required>
+              </div>
+
+              <!-- Message -->
+              <div class="form-group">
+                <textarea class="form-control" id="exampleFormControlTextarea2" rows="3" placeholder="Mesaj"
+                          value.bind="text & validate" required></textarea>
+              </div>
+
+              <!-- Copy -->
+              <div class="custom-control custom-checkbox mb-4">
+                <input type="checkbox" class="custom-control-input" id="defaultContactFormCopy" checked.bind="isChecked" >
+                <label class="custom-control-label" for="defaultContactFormCopy">Sunt de acord cu prelucrarea datelor in
+                  scopuri de marketing</label>
+              </div>
+
+              <!-- Send button -->
+              <button class="btn" type="submit" disabled.bind="checkedbtn">Trimite</button>
+
+            </form>
+            <ul if.bind="controller.errors">
+              <li repeat.for="error of controller.errors">
+                ${error.message}
+              </li>
+            </ul>
+            <!-- Default form contact -->
+          </div>
+        </div>
+        <hr>
+      </div>
+
+      <!-- Footer -->
+      <footer class="page-footer pt-4" style="width: 95%; margin-left:25px;">
+
+
+        <!-- Grid row -->
+        <div class="row d-flex align-items-center">
+
+          <!-- Grid column -->
+          <div class="col-md-7 col-lg-8">
+
+            <!--Copyright-->
+            <p class="text-center text-md-left">© Taxi App 2019
+            </p>
+
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-5 col-lg-4 ml-lg-0">
+
+            <!-- Social buttons -->
+            <div class="text-center text-md-right">
+              <ul class="list-unstyled list-inline">
+                <li class="list-inline-item">
+                  <a class="btn-floating btn-sm rgba-white-slight mx-1" href="https://www.facebook.com/">
+                    <i class="fab fa-facebook-f fa-2x"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a class="btn-floating btn-sm rgba-white-slight mx-1" href="https://www.twitter.com/">
+                    <i class="fab fa-twitter fa-2x"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a class="btn-floating btn-sm rgba-white-slight mx-1"
+                     href="https://accounts.google.com/signin/v2/identifier?hl=ro&passive=true&continue=https%3A%2F%2Fwww.google.ro%2F&flowName=GlifWebSignIn&flowEntry=ServiceLogin">
+                    <i class="fab fa-google-plus-g fa-2x"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a class="btn-floating btn-sm rgba-white-slight mx-1" href="https://www.linkedin.com/">
+                    <i class="fab fa-linkedin-in fa-2x"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </footer>
+      <!-- Footer -->
+    </div>
+  </div>
+
+  <style>
+    h2 {
+      text-align: center;
+      padding-top: 35px;
+    }
+
+    nav h1 {
+      color: white;
+    }
+
+    div h2 {
+      text-align: left;
+    }
+
+    hr {
+      height: 12px;
+      border: 0;
+      box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
+    }
+
+    .col-md-4 {
+      padding-top: 20px;
+    }
+
+    .col-md-4 a {
+      margin-left: 48px;
+    }
+
+    #contactUs {
+      padding-top: 10px;
+      text-align: center;
+      height: 50px;
+      font-family: "Arial Black", serif;
+      width: 24em;
+      float: left;
+      border-radius: 5px;
+      background: gold;
+      color: black;
+      transition: background 1s, color 1s;
+      -webkit-transition: background 1s, color 1s;
+    }
+
+    #contactUs:hover {
+      background: black;
+      color: white;
+    }
+
+    .btn {
+      background: gold;
+      color: black;
+      text-align: center;
+      font-family: "Arial Black", serif;
+      transition: background 1s, color 1s;
+      -webkit-transition: background 1s, color 1s;
+    }
+
+    .btn:hover {
+      background: black;
+      color: white;
+    }
+
+  </style>
+</template>

@@ -1,10 +1,21 @@
+
 export class Home {
 
-  // navigate():void{
-  //   location.assign('#/clients')
-  // }
-  //
-  // navigateAbout():void{
-  //   location.assign('#/abouts')
-  // }
+
+
+  static home(): void {
+  location.assign('')
+  }
+
+  static navigate(): void {
+    location.assign('#/clients')
+  }
+
+  static navigateAbout(): void {
+    location.assign('#/abouts')
+  }
+
+
+
+
 }
